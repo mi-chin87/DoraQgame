@@ -1,0 +1,3488 @@
+title "クイズ！ドラえもん"
+x=40;クイズ画面を表示する際、x軸いくつに画面の左上をもてくるか
+y=0;クイズ画面を表示する際、y軸いくつに画面の左上をもてくるか
+*start
+    screen 0,1280,720,,x,y
+    pos 180,70
+	font "ＭＳ ゴシック", 100, 1
+	color 0,200,255
+	mes"クイズ！ドラえもん"
+	pos 120,200
+	font "ＭＳ ゴシック", 70, 1
+	color 255,255,0
+	mes"～クイズはプログラムをめぐる～"
+	objsize 800,80
+	pos 230,300
+	objmode 2
+	font "ＭＳ　Ｐゴシック",35,1
+	button"誰でも気軽にチャレンジ！（かんたん）モード",*mondai1E
+	objsize 800,80
+	pos 230,400
+	objmode 2
+	font "ＭＳ　Ｐゴシック",35,1
+	button"アニメとか映画を見てたら解ける（普通）モード",*mondai1N
+	objsize 800,80
+	pos 230,500
+	objmode 2
+	font "ＭＳ　Ｐゴシック",35,1
+	button"人並み以上に詳しい人向け（難しい）モード",*mondai1H
+	stop
+*mondai1E
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 255,0,0
+    mes"第一問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"ドラえもんの顔には左右にヒゲがついていますが、全部で\n何本のヒゲがはえているでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "２本",*huseikai1E
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "４本",*huseikai1E
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "６本",*seikai1E
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "８本",*huseikai1E
+    stop
+*huseikai1E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,100,255
+	pos 150,50
+	mes"0問セイカイデス・・・"
+	wait 80
+	pos 40,300
+	font"HGPゴシックM",70
+	color 0,0,0
+	mes"あれ？のび太くんと同じ０点じゃないか～"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*seikai1E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai2E
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*mondai2E
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 255,0,0
+    mes"第二問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"テレビアニメ版ドラえもんのしっぽの色は何色でしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "赤色",*seikai2E
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "青色",*huseikai2E
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "水色",*huseikai2E
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "虹色",*huseikai2E
+    stop
+*huseikai2E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"１問セイカイデス"
+	wait 80
+	pos 40,300
+	font"HGPゴシックM",70
+	color 0,0,0
+	mes"アンキパンを使わずに、自分の力で挑戦\nしたのか！えらい！感動した！"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*seikai2E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai3E
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*mondai3E
+	cls;mondai3Eは都合上他の問題文と座標が違うのでコピペしない！！！！！！！！！！！
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 255,0,0
+    mes"第三問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 20,90
+    mes"のび太は普段、自分の母をどういう風に呼んでいるでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ママ",*seikai3E
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "お母さん",*huseikai3E
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "母上",*huseikai3E
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "名前で呼んでいる",*huseikai3E
+    stop
+*huseikai3E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"２問セイカイデス"
+	wait 80
+	pos 40,300
+	font"HGPゴシックM",70
+	color 0,0,0
+	mes"アンキパンを使わずに、自分の力で挑戦\nしたのか！えらい！感動した！"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*seikai3E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai4E
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*mondai4E
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 255,0,0
+    mes"第四問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"ドラえもんは次のうちの誰かがいます。誰でしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "お兄ちゃん",*huseikai4E
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "お姉ちゃん",*huseikai4E
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "弟",*huseikai4E
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "妹",*seikai4E
+    stop
+*seikai4E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai5E
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai4E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"３問セイカイデス"
+	wait 80
+	pos 40,300
+	font"HGPゴシックM",70
+	color 0,0,0
+	mes"世の中はなにかほしいと思ったら、そのた\nめにそれなりの努力をしないといけない。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai5E
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 255,0,0
+    mes"第五問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"スネ夫の苗字は何というでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "素根",*huseikai5E
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "骨川",*seikai5E
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "剛田",*huseikai5E
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "徳川",*huseikai5E
+    stop
+*seikai5E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai6E
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai5E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"４問セイカイデス"
+	wait 80
+	pos 40,300
+	font"HGPゴシックM",70
+	color 0,0,0
+	mes"世の中はなにかほしいと思ったら、そのた\nめにそれなりの努力をしないといけない。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai6E
+    cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 255,0,0
+    mes"第六問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"「ドラえもん」の原作者は次のうち誰でしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "安孫子素雄",*huseikai6E
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "藤子不二雄Ａ",*huseikai6E
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "藤子・Ｆ・不二雄",*seikai6E
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "あばら谷一郎",*huseikai6E
+    stop
+*seikai6E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai7E
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai6E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"５問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"目が前についてるのはなぜだと思う？前へ前へ\nと進むためだ！ふりかえらないで、つねにあすを\nめざしてがんばりなさい。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai7E
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 255,0,0
+    mes"第七問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"ドラえもんのタイムマシンがある時空間につながっているの\nは次のうちのどれでしょう？"
+    pos 150,380
+    objsize 450,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "のび太の部屋の引き出し",*seikai7E
+    pos 700,380
+    objsize 450,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "どこでもドア",*huseikai7E
+     pos 150,500
+    objsize 450,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "空き地の土管",*huseikai7E
+     pos 700,500
+    objsize 450,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "学校の裏山の大木の穴",*huseikai7E
+    stop
+*seikai7E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai8E
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai7E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"６問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"目が前についてるのはなぜだと思う？前へ前へ\nと進むためだ！ふりかえらないで、つねにあすを\nめざしてがんばりなさい。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai8E
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 255,0,0
+    mes"第八問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"ドラえもんの首輪についている物は次のうちどれでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "花",*huseikai8E
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "蝶ネクタイ",*huseikai8E
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "鈴",*seikai8E
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "レモン",*huseikai8E
+    stop
+*seikai8E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai9E
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai8E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"７問セイカイデス"
+	wait 80
+	pos 80,290
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"人にできて、きみだけにできないなんてこと\nあるもんか。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai9E
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 255,0,0
+    mes"第九問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"のび太と同じでメガネをかけている人は、次のうち誰でしょ\nう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "スネ夫",*huseikai9E
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "しずかちゃん",*huseikai9E
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "のび太のパパ",*huseikai9E
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "のび太のママ",*seikai9E
+    stop
+*seikai9E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai10E
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai9E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 80,50
+	mes"８問セイカイデス"
+	wait 80
+	pos 180,290
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"人にできて、きみだけにできないなんてこと\nあるもんか。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai10E
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 255,0,0
+    mes"第十問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes "ドラえもんが最も嫌いな生き物は次のうちどれでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "タヌキ",*huseikai10E
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ネズミ",*seikai10E
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ゴキブリ",*huseikai10E
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ネコ",*huseikai10E
+    stop
+*huseikai10E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 40
+	pos 300,0
+	mes"・"
+	wait 40
+	pos 400,0
+	mes"・"
+	wait 40
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"９問セイカイデス"
+	wait 80
+	pos 80,290
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"人にできて、きみだけにできないなんてこと\nあるもんか。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*seikai10E
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 40
+	pos 300,0
+	mes"・"
+	wait 40
+	pos 400,0
+	mes"・"
+	wait 40
+	pos 500,0
+	mes"・"
+	wait 40
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 130
+	cls
+	wait 70
+	color 255,0,200
+	font"HGPゴシックM",140,4
+	pos 80,80
+	mes"全十問完全正解！"
+	wait 80
+	font"HGPゴシックM",90,0
+	color 0,0,0
+	pos 360,280
+	mes"おめでとう！！"
+	font"HGPゴシックM",60,0
+	pos 80,400
+	mes"長い間の努力が、ついにむくわれたんだね。"
+	wait 150
+	objmode 2
+	font"Adobe Gothic Std B",30,0
+	objsize 500,80
+	pos 385,560
+	button"BACK TO THE TITLE",*start
+	stop
+*mondai1N
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 0,255,0
+    mes"第一問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"映画「ＳＴＡＮＤ　ＢＹ　ＭＥ　ドラえもん」で、物語の終盤、の\nび太が未来からドラえもんを呼び戻す際に使ったひみつ道\n具はどれでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ソノウソホント",*huseikai1N
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ウソ８ＯＯ",*seikai1N
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "アベコンベ",*huseikai1N
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "もしもボックス",*huseikai1N
+    stop
+*seikai1N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai2N
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai1N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,100,255
+	pos 150,50
+	mes"0問セイカイデス・・・"
+	wait 80
+	pos 40,300
+	font"HGPゴシックM",70
+	color 0,0,0
+	mes"ほんとは０点なんて取りたくなかったけど、\nプログラムが言うんだから仕方ないよねー"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai2N
+    cls;選択肢の文が多いときのボタン大きめバージョン
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 0,255,0
+    mes"第二問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"ドラえもんには耳がありません。それはなぜでしょう？"
+    objsize 800,80
+	pos 230,300
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ネズミ型ロボットにかじられた",*seikai2N
+	objsize 800,80
+	pos 230,400
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "初期不良",*huseikai2N
+	objsize 800,80
+	pos 230,500
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "自分のどら焼きを食べられたショック",*huseikai2N
+ 	objsize 800,80
+	pos 230,600
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "子供にいたずらされた",*huseikai2N
+    stop
+*huseikai2N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"１問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"悪いことばかり続くもんじゃないよ。まじめに努力\nしていれば、いつか・・・、夜は必ず朝となる。長い\n冬がすぎれば、あたたかい春の日が・・・。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*seikai2N
+    cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai3N
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*mondai3N
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 0,255,0
+    mes"第三問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"疲れた時に体に貼ると疲れがとれるひみつ道具はどれで\nしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "アットグングン",*huseikai3N
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ひい木",*huseikai3N
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "階級ワッペン",*huseikai3N
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ケロンパス",*seikai3N
+    stop
+*huseikai3N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"２問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"悪いことばかり続くもんじゃないよ。まじめに努力\nしていれば、いつか・・・、夜は必ず朝となる。長い\n冬がすぎれば、あたたかい春の日が・・・。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*seikai3N
+	   cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai4N
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*mondai4N
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 0,255,0
+    mes"第四問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"作品中の登場人物の一人である「セワシ」は、のび太にとっ\nてどのような関係の人物でしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "孫",*huseikai4N
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ひ孫",*huseikai4N
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "孫の孫",*seikai4N
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "孫の孫の孫",*huseikai4N
+    stop
+*seikai4N
+	   cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai5N
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai4N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"３問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"そんなゆめみたいなはなし、きらいなの。賞品は、\nじぶんで努力して手に入れるものよ。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai5N
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 0,255,0
+    mes"第五問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"作中に存在しないものは次のうちどれでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "フーコ",*huseikai5N
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ハルバル",*huseikai5N
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ころばし屋",*huseikai5N
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "チー坊",*seikai5N
+    stop
+*seikai5N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai6N
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai5N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"４問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"そんなゆめみたいなはなし、きらいなの。賞品は、\nじぶんで努力して手に入れるものよ。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai6N
+    cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 0,255,0
+    mes"第六問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"次のうち、のび太が得意としていないものはどれでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "あやとり",*huseikai6N
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "射撃",*huseikai6N
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ラジコン",*seikai6N
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "昼寝",*huseikai6N
+    stop
+*seikai6N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai7N
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai6N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"５問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"一つだけ教えておこう。きみはこれからも何度も\nつまずく。でもそのたびに立ち直る強さももって\nるんだよ。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai7N
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 0,255,0
+    mes"第七問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"ドラミちゃんの一番好きな食べ物は次のうちどれでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ケーキ",*huseikai7N
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "メロンパン",*seikai7N
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "シュークリーム",*huseikai7N
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "キャンディ",*huseikai7N
+    stop
+*seikai7N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai8N
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai7N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"６問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"一つだけ教えておこう。きみはこれからも何度も\nつまずく。でもそのたびに立ち直る強さももって\nるんだよ。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai8N
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 0,255,0
+    mes"第八問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"次のうち、作中で実在しないひみつ道具はどれでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "タイムベルト",*huseikai8N
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "悪魔のピンボール",*seikai8N
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "影きりばさみ",*huseikai8N
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "地球破壊爆弾",*huseikai8N
+    stop
+*seikai8N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai9N
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai8N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"７問セイカイデス"
+	wait 80
+	pos 180,290
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"自信を持て！自分はクリアできると！"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai9N
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 0,255,0
+    mes"第九問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"作品中の登場人物の一人である「できすぎくん」を漢字で表\n記するとどのようになるでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "出木杉くん",*seikai9N
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "出来過くん",*huseikai9N
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "出来杉くん",*huseikai9N
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "出軌杉くん",*huseikai9N
+    stop
+*seikai9N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai10N
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai9N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"８問セイカイデス"
+	wait 80
+	pos 180,290
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"自信を持て！自分はクリアできると！"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai10N
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 0,255,0
+    mes"第十問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"しずかちゃんが一番好きな食べ物はどれでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "焼き芋",*seikai10N
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ケーキ",*huseikai10N
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ラーメン",*huseikai10N
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "クッキー",*huseikai10N
+    stop
+*huseikai10N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 40
+	pos 300,0
+	mes"・"
+	wait 40
+	pos 400,0
+	mes"・"
+	wait 40
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"９問セイカイデス"
+	wait 80
+	pos 180,290
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"自信を持て！自分はクリアできると！"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*seikai10N
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 40
+	pos 300,0
+	mes"・"
+	wait 40
+	pos 400,0
+	mes"・"
+	wait 40
+	pos 500,0
+	mes"・"
+	wait 40
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 130
+	cls
+	wait 70
+	color 255,0,200
+	font"HGPゴシックM",140,4
+	pos 80,80
+	mes"全十問完全正解！"
+	wait 80
+	font"HGPゴシックM",90,0
+	color 0,0,0
+	pos 360,280
+	mes"おめでとう！！"
+	font"HGPゴシックM",60,0
+	pos 50,400
+	mes"ごほうびに、きれいなジャイアンをあげましょう。"
+	font"HGPゴシックM",8,0
+	pos 1230,460
+	mes"（冗談ダヨ）"
+	wait 150
+	objmode 2
+	font"Adobe Gothic Std B",30,0
+	objsize 500,80
+	pos 385,560
+	button"BACK TO THE TITLE",*start
+	stop
+*mondai1H
+	cls;選択肢の文が多いときのボタン大きめバージョン
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 127,0,255
+    mes"第一問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"ひみつ道具「もしもボックス」についている機能として作品中\nで描かれているものの中で間違っているのはどれでしょう？"
+    objsize 1000,80
+	pos 140,300
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "タイムパトロールへの連絡ができる",*huseikai1H
+	objsize 1000,80
+	pos 140,400
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "パラレルワールドを作ることができる",*huseikai1H
+	objsize 1000,80
+	pos 140,500
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "もしもボックスが故障した際に連絡できる",*huseikai1H
+ 	objsize 1000,80
+	pos 140,600
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ダイヤル部分をはずすことによりテレビ電話ができる",*seikai1H
+    stop
+*seikai1H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai2H
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai1H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,100,255
+	pos 150,50
+	mes"0問セイカイデス・・・"
+	wait 80
+	pos 40,300
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"気にするな。のび太はしょっちゅう０点でも明るく\n生きてるから。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai2H
+    cls;選択肢の文が多いときのボタン大きめバージョン
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 127,0,255
+    mes"第二問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"作品「百年後のフロク」より、ドラえもんが持ってきた、未来\nで発売されている「小学四年生」のふろく「クイズパズル百\n科」に登載されていた問題はどれでしょう？"
+    objsize 1000,80
+	pos 140,300
+	objmode 2
+    font "ＭＳ　Ｐゴシック",30,1
+    button "ラムダがローにのっとってミューをイータした。これは違法か合法か。",*huseikai2H
+	objsize 1000,80
+	pos 140,400
+	objmode 2
+    font "ＭＳ　Ｐゴシック",30,1
+    button "「タウをシータがファイしたらプサイはガンマる。」○か×か。",*huseikai2H
+	objsize 1000,80
+	pos 140,500
+	objmode 2
+    font "ＭＳ　Ｐゴシック",30,1
+    button "アルファがベータをカッパらったらイプシロンした。なぜだろう。",*seikai2H
+ 	objsize 1000,80
+	pos 140,600
+	objmode 2
+    font "ＭＳ　Ｐゴシック",30,1
+    button "ニューのオメガはオミクロンできる。しかしカイせはしないのはどうしてだろう。",*huseikai2H
+    stop
+*huseikai2H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"１問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"人間の値うちは、点数だけできまるものじゃない\nのよ。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*seikai2H
+    cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai3H
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*mondai3H
+	cls;選択肢の文が多いときのボタン大きめバージョン
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 127,0,255
+    mes"第三問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"のび太がタイムマシンで未来に行って見てきた時の出木杉\nくんについて正しいのはどれでしょう？"
+    objsize 800,80
+	pos 230,300
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "娘が一人いる",*huseikai3H
+	objsize 800,80
+	pos 230,400
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "時空連続体についての書物を出版している",*huseikai3H
+	objsize 800,80
+	pos 230,500
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "お酒が飲めない",*huseikai3H
+ 	objsize 800,80
+	pos 230,600
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "火星基地でしごとしたことがある",*seikai3H
+    stop
+*huseikai3H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"２問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"人間の値うちは、点数だけできまるものじゃない\nのよ。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*seikai3H
+	   cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai4H
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*mondai4H
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 127,0,255
+    mes"第四問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"ジャイ子が自作の漫画をかく時に使用しているペンネーム\nは何でしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",35,1
+    button "ベヨネッタ・クリーム",*huseikai4H
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",35,1
+    button "クリスチーネ　剛田",*seikai4H
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",35,1
+    button "PAPIRUSsister",*huseikai4H
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",35,1
+    button "フィームネス・フィールド",*huseikai4H
+    stop
+*seikai4H
+	   cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai5H
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai4H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"３問セイカイデス"
+	wait 80
+	pos 90,290
+	font"HGPゴシックM",80
+	color 0,0,0
+	mes"もっともっとがんばれるはずだ！！"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai5H
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 127,0,255
+    mes"第五問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"次のうち、本名が明かされていないのは誰でしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "出木杉くん",*huseikai5H
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "のび太のママ",*huseikai5H
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ジャイ子",*seikai5H
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "のび太のパパ",*huseikai5H
+    stop
+*seikai5H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai6H
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai5H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"４問セイカイデス"
+	wait 80
+	pos 40,250
+	font"HGPゴシックM",80
+	color 0,0,0
+	mes"もっともっとがんばれるはずだ！！"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai6H
+    cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 127,0,255
+    mes"第六問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"「ザ★ドラえもんズ」のメンバーの中で、闘牛士のロボットは\n次のうち誰でしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ドラ・ザ・キッド",*huseikai6H
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ドラリーニョ",*huseikai6H
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "エル・マタドーラ",*seikai6H
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ドラニコフ",*huseikai6H
+    stop
+*seikai6H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai7H
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai6H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"５問セイカイデス"
+	wait 80
+	pos 150,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"未来はこれから変えることができるんだ。\nがんばれ！"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai7H
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 127,0,255
+    mes"第七問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"のび太たちの家は、東京のどこにあるでしょう？
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "足立区",*huseikai7H
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "港区",*huseikai7H
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "中央区",*huseikai7H
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "練馬区",*seikai7H
+    stop
+*seikai7H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai8H
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai7H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"６問セイカイデス"
+	wait 80
+	pos 150,250
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"未来はこれから変えることができるんだ。\nがんばれ！"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai8H
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 127,0,255
+    mes"第八問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"次のうち、作品中で「相対性理論」についての話がでてくる\nものはどれでしょう？"
+	objsize 800,80
+	pos 230,300
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "「竜宮城の八日間」",*seikai8H
+	objsize 800,80
+	pos 230,400
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "「モアよドードーよ、永遠に」",*huseikai8H
+	objsize 800,80
+	pos 230,500
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "「ぼく、桃太郎のなんなのさ」",*huseikai8H
+ 	objsize 800,80
+	pos 230,600
+	objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "「ガラパ星からきた男」",*huseikai8H
+    stop
+*seikai8H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai9H
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai8H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"７問セイカイデス"
+	wait 80
+	pos 40,290
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"さりげなくわらってはいるが・・・、きみの気もちが、\nどんなにきずついたかぼくにはよくわかる。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai9H
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 127,0,255
+    mes"第九問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"ドラえもんが大好きなまんがの中の一つである『ライオン\n仮面』の主人公の弟の名前は次のうちどれでしょう？"
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "トラ仮面",*huseikai9H
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "オシシ仮面",*seikai9H
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "フニャコフニャ仮面",*huseikai9H
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "ポンド仮面",*huseikai9H
+    stop
+*seikai9H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 20
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 70
+	cls
+	font"Adobe Gothic Std B",100,0
+	pos 100,80
+	mes"次の問題へ進もう！！！"
+	objsize 450,100
+	pos 390,280
+	objmode 2
+	font"Adobe Gothic Std B",40,0
+	button"先へ進む",*mondai10H
+	font"Adobe Gothic Std B",30,0
+	pos 380,530
+	color 0,0,255
+	mes"ゲームを中断したい方はコチラから↓"
+	objsize 230,70
+	pos 500,600
+	objmode 2
+	font"Adobe Gothic Std B",25,0
+	button"タイトルに戻る",*start
+	stop
+*huseikai9H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 20
+	pos 300,0
+	mes"・"
+	wait 20
+	pos 400,0
+	mes"・"
+	wait 20
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"８問セイカイデス"
+	wait 80
+	pos 40,290
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"さりげなくわらってはいるが・・・、きみの気もちが、\nどんなにきずついたかぼくにはよくわかる。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*mondai10H
+	cls
+	screen 0,1280,720,,x,y
+    font "ＭＳ ゴシック",70,1
+    color 127,0,255
+    mes"第十問"
+    font"ＭＳ　Ｐゴシック",50,0
+    color 0,0,0
+    pos 30,90
+    mes"スネ夫の弟の名前は、次のうちのどれでしょう？
+    pos 150,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "スネ吉",*huseikai10H
+    pos 700,380
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "スニ夫",*huseikai10H
+     pos 150,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "スネツグ",*seikai10H
+     pos 700,500
+    objsize 400,100
+    objmode 2
+    font "ＭＳ　Ｐゴシック",40,1
+    button "Sneech",*huseikai10H
+    stop
+*huseikai10H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 40
+	pos 300,0
+	mes"・"
+	wait 40
+	pos 400,0
+	mes"・"
+	wait 40
+	pos 500,0
+	mes"・"
+	wait 40
+	color 0,0,255
+	pos 35,130
+	font "Adobe Gothic Std B",400,0
+	mes"不正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 100,255,100
+	mes"ざんねーん"
+	wait 130
+	cls
+	wait 70
+	font"HGPゴシックM",120,0
+	color 0,255,0
+	pos 180,50
+	mes"９問セイカイデス"
+	wait 80
+	pos 40,290
+	font"HGPゴシックM",60
+	color 0,0,0
+	mes"さりげなくわらってはいるが・・・、きみの気もちが、\nどんなにきずついたかぼくにはよくわかる。"
+	wait 30
+	 objsize 500,100
+	 font"HGPゴシックM",40
+	 pos 380,500
+	button"ふりだしに戻る",*start
+	stop
+*seikai10H
+	cls
+	font"Adobe Gothic Std B",100,0
+	mes"結果は"
+	wait 40
+	pos 300,0
+	mes"・"
+	wait 40
+	pos 400,0
+	mes"・"
+	wait 40
+	pos 500,0
+	mes"・"
+	wait 40
+	color 255,0,0
+	pos 100,130
+	font "Adobe Gothic Std B",400,0
+	mes"正解！！"
+	wait 60
+	font"Adobe Gothic Std B",40,0
+	pos 1000,600
+	color 255,0,255
+	mes"やったー"
+	wait 130
+	cls
+	wait 70
+	color 255,0,100
+	font"HGPゴシックM",140,4
+	pos 80,80
+	mes"全十問完全正解！"
+	wait 80
+	font"HGPゴシックM",90,0
+	color 0,0,0
+	pos 360,280
+	mes"おめでとう！！"
+	font"HGPゴシックM",60,0
+	pos 50,400
+	mes"だからいったろ。悪いことばっかりつづくもんじゃ\nないって。"
+	wait 150
+	objmode 2
+	font"Adobe Gothic Std B",30,0
+	objsize 500,80
+	pos 385,560
+	button"BACK TO THE TITLE",*start
+	stop
